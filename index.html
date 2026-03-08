@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Saundarya Care</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+--bg:#f7f5f2;
+--accent:#b08a72;
+--text:#1e1e1e;
+--card:#ffffff;
+}
+
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
-font-family:Inter, sans-serif;
-background:#f8f6f3;
-color:#1e1e1e;
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
 }
 
 h1,h2,h3{
-font-family:"Playfair Display", serif;
+font-family:'Playfair Display',serif;
+margin:0;
 }
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:25px 10%;
+padding:22px 10%;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+border-bottom:1px solid #eee;
 }
 
-header h2{
-font-weight:700;
+.logo{
+font-size:20px;
+font-weight:600;
 letter-spacing:1px;
 }
 
 nav a{
-margin-left:30px;
+margin-left:28px;
 text-decoration:none;
 color:#333;
-font-weight:500;
+font-size:15px;
 }
 
 .hero{
-height:90vh;
+height:85vh;
+background:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background-image:url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9");
-background-size:cover;
-background-position:center;
 color:white;
 }
 
@@ -59,91 +71,133 @@ background:rgba(0,0,0,0.45);
 width:100%;
 height:100%;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
-flex-direction:column;
 padding:20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:50px;
 margin-bottom:10px;
 }
 
 .hero p{
-font-size:20px;
+font-size:19px;
 max-width:600px;
-margin-bottom:30px;
+margin-bottom:28px;
 }
 
 .btn{
-background:#b76e79;
+background:var(--accent);
 color:white;
-padding:14px 32px;
-border-radius:30px;
+padding:14px 34px;
+border-radius:40px;
 text-decoration:none;
 font-weight:500;
+transition:.25s;
+}
+
+.btn:hover{
+opacity:.9;
 }
 
 .section{
-padding:100px 10%;
+padding:110px 12%;
 text-align:center;
 }
 
+.section.alt{
+background:white;
+}
+
 .section h2{
-font-size:36px;
-margin-bottom:50px;
+font-size:34px;
+margin-bottom:22px;
+}
+
+.section p{
+max-width:650px;
+margin:auto;
+line-height:1.7;
+color:#555;
 }
 
 .services{
+margin-top:55px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:28px;
 }
 
 .card{
-background:white;
-padding:40px;
+background:var(--card);
+padding:38px;
 border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.06);
-transition:0.3s;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 }
 
 .products{
+margin-top:55px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:28px;
 }
 
 .product{
-background:white;
+background:var(--card);
 padding:30px;
 border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.06);
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 footer{
 background:white;
 text-align:center;
-padding:40px;
+padding:38px;
+margin-top:80px;
 border-top:1px solid #eee;
+font-size:14px;
+color:#666;
 }
 
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:22px;
+right:22px;
 background:#25D366;
 color:white;
 padding:14px 18px;
 border-radius:50px;
-font-weight:600;
 text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.2);
+font-size:14px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+header{
+padding:18px 6%;
+}
+
+nav a{
+margin-left:16px;
+font-size:14px;
+}
+
+.section{
+padding:80px 8%;
+}
+
 }
 
 </style>
@@ -153,7 +207,8 @@ box-shadow:0 6px 20px rgba(0,0,0,0.2);
 <body>
 
 <header>
-<h2>Saundarya Care</h2>
+
+<div class="logo">Saundarya Care</div>
 
 <nav>
 <a href="#">Home</a>
@@ -161,17 +216,18 @@ box-shadow:0 6px 20px rgba(0,0,0,0.2);
 <a href="#products">Products</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
 <div class="hero-overlay">
 
-<h1>Luxury Beauty Care</h1>
+<h1>Beauty Care That Feels Personal</h1>
 
 <p>
-Premium skincare, beauty treatments and wellness
-designed to enhance your natural beauty.
+Skincare, makeup and hair services designed to help you
+look and feel your best.
 </p>
 
 <a class="btn" href="#contact">Book Appointment</a>
@@ -180,7 +236,18 @@ designed to enhance your natural beauty.
 
 </section>
 
-<section id="services" class="section">
+<section class="section">
+
+<h2>About Saundarya Care</h2>
+
+<p>
+Saundarya Care offers a calm and welcoming space where
+beauty treatments focus on care, comfort and natural results.
+</p>
+
+</section>
+
+<section id="services" class="section alt">
 
 <h2>Our Services</h2>
 
@@ -188,22 +255,17 @@ designed to enhance your natural beauty.
 
 <div class="card">
 <h3>Facial Treatment</h3>
-<p>Advanced skin glow therapy.</p>
+<p>Skin care and glow therapy.</p>
 </div>
 
 <div class="card">
 <h3>Hair Styling</h3>
-<p>Professional hair care and styling.</p>
+<p>Professional styling and hair care.</p>
 </div>
 
 <div class="card">
 <h3>Makeup</h3>
-<p>Luxury bridal and party makeup.</p>
-</div>
-
-<div class="card">
-<h3>Nail Care</h3>
-<p>Manicure, pedicure and nail art.</p>
+<p>Makeup for events and special occasions.</p>
 </div>
 
 </div>
@@ -223,7 +285,7 @@ designed to enhance your natural beauty.
 
 <div class="product">
 <h3>Hair Repair Oil</h3>
-<p>Deep nourishment for hair.</p>
+<p>Deep nourishment for healthy hair.</p>
 </div>
 
 <div class="product">
@@ -235,15 +297,15 @@ designed to enhance your natural beauty.
 
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section alt">
 
-<h2>Book Your Appointment</h2>
+<h2>Book Appointment</h2>
 
 <p>
-Contact us to schedule your beauty consultation.
+Send us a message on WhatsApp to schedule your visit.
 </p>
 
-<a class="btn" href="https://wa.me/918962795108">
+<a class="btn" href="https://wa.me/918962795108?text=Hello%20I%20want%20to%20book%20a%20beauty%20appointment">
 Chat on WhatsApp
 </a>
 
@@ -251,14 +313,13 @@ Chat on WhatsApp
 
 <footer>
 
-<p>© 2026 Saundarya Care</p>
+© 2026 Saundarya Care • Ujjain
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/918962795108">
+<a class="whatsapp" href="https://wa.me/918962795108?text=Hello%20I%20want%20to%20book%20a%20beauty%20appointment">
 WhatsApp
 </a>
 
 </body>
 </html>
-
